@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+//binary search with recursion and sorted array
+int binary_search(int arr[],int l, int r,int search);
+int main()
+{
+    int n,l,r,search,result;
+    //read
+    printf("enter the total:");
+    scanf("%d",&n);
+    int arr[n];
+    printf("enter the elements(sorted):\n");
+    for(int i=0;i<n;i++)
+    {
+    scanf("%d",&arr[i]);
+    }
+    //search ele?
+    printf("\nenter the search element=");
+    scanf("%d",&search);
+    result=binary_search(arr,0,n-1,search);
+    if(result!=-1)
+    {
+    printf("the element was found in position %d",result+1);
+    }
+    else
+    {
+        printf("the element is not found");
+    }
+    return 0;
+}
+int binary_search(int arr[],int l, int r,int search)
+{
+    int mid;
+    if(l<=r)
+    {
+        mid=(l+r)/2;
+        if(search==arr[mid])
+        {
+        printf("\nelement found");
+        return mid;
+        }
+       if(search>arr[mid])
+       {
+           binary_search(arr,mid+1,r,search);
+       }
+       else
+       {
+          binary_search(arr,l,mid-1,search);
+       }
+    }
+    else
+    {
+        return -1;
+    }
+}
