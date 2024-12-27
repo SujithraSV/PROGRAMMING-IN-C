@@ -1,0 +1,19 @@
+#include <stdio.h>
+//program to find an alphabet a vowel or not.
+int main()
+{
+    char ch;
+    printf("\t\tprogram to find an alphabet a vowel or not\n");
+    printf("Enter an alphabet:");
+    scanf("%c",&ch);
+    if (ch == 'a' || ch == 'A' || ch == 'e' || ch == 'E' || ch == 'i' || ch == 'I' || ch == 'o' || ch == 'O' || ch == 'u' || ch == 'U')
+    {
+        printf("the given alphabet is vowel");
+    }
+    else
+    {
+        printf("the given alphabet is not vowel ");
+    }
+
+    return 0;
+}
