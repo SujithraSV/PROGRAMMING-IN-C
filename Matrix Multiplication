@@ -1,0 +1,78 @@
+#include <stdio.h>
+
+int main()
+{
+    int m,n,p,q;
+    printf("enter the row and column value for 1st matrix");
+    scanf("%d %d",&m,&n);
+     printf("enter the row and column value for 2nd matrix");
+    scanf("%d %d",&p,&q);
+     int a[m][n],b[p][q],c[m][q],sum=0;
+    
+    /*printf("enter the array 1 elements ");
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    } 
+    printf("enter the array 2 elements ");
+    
+    for(int i=0;i<p;i++)
+    {
+       for(int j=0;j<q;j++)
+        {
+            scanf("%d",&b[i][j]);
+        }
+    }*/
+    if(n!=p)
+    {
+        printf("mutiplication not possible");
+    }
+
+    // mutiply
+    else
+    {
+    printf("enter the array 1 elements ");
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    } 
+    printf("enter the array 2 elements ");
+    
+    for(int i=0;i<p;i++)
+    {
+       for(int j=0;j<q;j++)
+        {
+            scanf("%d",&b[i][j]);
+        }
+    }
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0;j<q;j++)
+        {
+            sum=0;
+            for(int k=0;k<m;k++)
+            {
+            
+            sum+=a[i][k]*b[k][j];
+            c[i][j]=sum;
+            }
+        }
+    } 
+    printf("after mutiplication :\n");
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0;j<q;j++)
+        {
+            printf("%d \t",c[i][j]);
+        }
+        printf("\n");
+    } 
+    }
+    return 0;
+}
